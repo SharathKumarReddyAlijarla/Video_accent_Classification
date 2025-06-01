@@ -1,0 +1,27 @@
+# HTTP requests and downloads
+requests
+yt-dlp
+
+# Audio processing and extraction
+ffmpeg-python
+pydub
+
+# Whisper transcription
+git+https://github.com/openai/whisper.git
+torch
+
+# Speaker embedding (SpeechBrain)
+speechbrain
+
+# Streamlit for the web app
+streamlit
+
+# Utilities for working with URLs and files (if needed)
+validators
+
+# Optional but recommended for better audio I/O and numpy support
+numpy
+scipy
+
+# (Optional) for progress bars and nicer CLI experience
+tqdm
