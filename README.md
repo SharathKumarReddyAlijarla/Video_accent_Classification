@@ -6,7 +6,7 @@ An end-to-end pipeline for downloading videos, extracting and transcribing audio
 
 ## 🚀 Features
 
-✅ **Download Videos** from YouTube or direct HTTP URLs  
+✅ **Download Videos** from YouTube or HTTP URLs  
 ✅ **Extract Audio** from video using `ffmpeg`  
 ✅ **Transcribe Audio** using OpenAI’s Whisper ASR  
 ✅ **Generate Speaker Embeddings** with SpeechBrain ECAPA-TDNN  
@@ -15,47 +15,52 @@ An end-to-end pipeline for downloading videos, extracting and transcribing audio
 
 ---
 
+
 ## 🗂️ Project Structure
 
 ```
 project_root/
 │
-├── main.py                  # Entry point for running the pipeline
-├── app.py                   # Streamlit web application
-├── requirements.txt         # Python dependencies
+├── main.py # Core pipeline runner
+├── app.py # Streamlit web interface
+├── requirements.txt # Dependencies
+├── create_file_structure.py # Initializes necessary directories
 │
-├── utils/                   # Utility functions
-│   ├── file_utils.py
-│   └── url_utils.py
+├── utils/ # Utility functions
+│ └── helpers.py
 │
-├── downloader/              # Video download modules
-│   ├── youtube.py
-│   └── http.py
+├── downloader/ # Downloads videos from URL
+│ └── downloader.py
 │
-├── audio/                   # Audio extraction & preprocessing
-│   ├── extractor.py
-│   └── preprocess.py
+├── audio/ # Audio extraction/preprocessing
+│ ├── audio_extractor.py
+│ └── audio_preprocessor.py
 │
-├── transcription/           # Whisper-based transcription
-│   └── transcriber.py
+├── transcription/ # Whisper-based ASR transcription
+│ └── transcriber.py
 │
-├── speaker/                 # Speaker embedding extraction
-│   └── embedder.py
+├── speaker/ # Speaker embedding logic
+│ └── embedder.py
 │
-└── accent/                  # Accent classification
-    └── classifier.py
+├── accent/ # Accent classification module
+│ └── classifier.py
+│
+├── My_Loom_Sample.mp4 # Example video
+├── README.md # This documentation file
+└── research.ipynb # Research/experimentation notebook```
 ```
 
 ---
 
 ## ⚙️ Installation
 
-1. **Clone the repository**
+1. **Clone the Repository**
 
 ```bash
 git clone <repo-url>
 cd <repo-folder>
 ```
+
 
 2. **Create and activate a virtual environment** (recommended)
 
@@ -63,6 +68,7 @@ cd <repo-folder>
 python -m venv venv
 source venv/bin/activate       # On Windows: venv\Scripts\activate
 ```
+
 
 3. **Install the dependencies**
 
@@ -107,19 +113,27 @@ Then open your browser to the provided localhost URL, enter a video URL, and vie
 
 ---
 
-## 📌 Notes
+## 📊 Output Format
 
-- Uses **Whisper base** model on **CPU** by default  
-- Speaker embedding via **SpeechBrain ECAPA-TDNN**  
-- Accent classifier from **SpeechBrain pretrained models**  
-- Audio expected in **16kHz mono WAV** format  
-- First-time model downloads require an **active internet connection**  
+Streamlit and CLI will output results like:
 
----
+| Video Link                                     | Video Description | Predicted Accent | True Accent | Confidence |
+|------------------------------------------------|-------------------|------------------|-------------|------------|
+| https://youtu.be/example1                      | Sample video      | British          | British     | 0.91       |
+| https://storage.googleapis.com/sample2.mp4     | Lecture speech    | Indian           | Indian      | 0.88       |
 
-## 📝 License
 
-**MIT License**
+## 📌 Model & Frameworks Used
+
+| Component      | Framework       | Description                                      |
+|----------------|------------------|--------------------------------------------------|
+| Transcription  | OpenAI Whisper   | Automatic speech recognition (ASR)              |
+| Embedding      | SpeechBrain      | ECAPA-TDNN model for speaker representation     |
+| Classifier     | SpeechBrain      | Pretrained X-vector accent classifier           |
+| Downloader     | yt-dlp           | Efficient YouTube & video downloading           |
+| Web App        | Streamlit        | Simple browser-based UI                         |
+  
+
 
 ---
 
