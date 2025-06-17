@@ -1,17 +1,17 @@
-# 🎯 Video Accent Classification Pipeline
+#  Video Accent Classification Pipeline
 
 An end-to-end pipeline for downloading videos, extracting and transcribing audio, generating speaker embeddings, and classifying the speaker’s accent — all wrapped in a user-friendly Streamlit web app.
 
 ---
 
-## 🚀 Features
+##  Features
 
-✅ **Download Videos** from YouTube or HTTP URLs  
-✅ **Extract Audio** from video using `ffmpeg`  
-✅ **Transcribe Audio** using OpenAI’s Whisper ASR  
-✅ **Generate Speaker Embeddings** with SpeechBrain ECAPA-TDNN  
-✅ **Classify Accents** using a pretrained SpeechBrain model  
-✅ **Streamlit Web App** for interactive exploration  
+ **⚪Download Videos** from YouTube or HTTP URLs  
+ **⚫Extract Audio** from video using `ffmpeg`  
+ **⚪Transcribe Audio** using OpenAI’s Whisper ASR  
+ **⚫Generate Speaker Embeddings** with SpeechBrain ECAPA-TDNN  
+ **⚪Classify Accents** using a pretrained SpeechBrain model  
+ **⚫Streamlit Web App** for interactive exploration  
 
 ---
 
@@ -81,9 +81,9 @@ pip install -r requirements.txt
 
 ---
 
-## 🧪 Usage
+##  Usage
 
-### 🔧 Run from Command Line
+###  Run from Command Line
 
 ```bash
 python main.py "<video_url_or_local_path>"
@@ -103,7 +103,7 @@ python main.py "https://youtu.be/nIwU-9ZTTJc?si=Ba6XvQSEv8nwEBGH"
 - Classify accent using pretrained model
 - Print results and save transcription to file
 
-### 🌐 Run Streamlit Web App
+###  Run Streamlit Web App
 
 ```bash
 streamlit run app.py
@@ -113,7 +113,7 @@ Then open your browser to the provided localhost URL, enter a video URL, and vie
 
 ---
 
-## 📊 Results
+## Results
 
 Streamlit and CLI will output results like:
 
@@ -123,7 +123,7 @@ Streamlit and CLI will output results like:
 | [https://storage.googleapis.com/sample2.mp4 ](https://github.com/SharathKumarReddyAlijarla/Video_accent_Classification/blob/main/My_Loom_Sample.mp4)    | My loom video sample    | Indian           | Indian      | 55      |
 
 
-## 📌 Model & Frameworks Used
+##  Model & Frameworks Used
 
 | Component      | Framework       | Description                                      |
 |----------------|------------------|--------------------------------------------------|
@@ -137,7 +137,7 @@ Streamlit and CLI will output results like:
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 
 - [OpenAI Whisper](https://github.com/openai/whisper)  
 - [SpeechBrain](https://speechbrain.readthedocs.io/)  
